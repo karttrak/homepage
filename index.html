@@ -22,87 +22,36 @@
 	<!-- Business in the front... -->
 
 	<div class="row">
-		<div class="panel panel-default">
-			<div class="panel-heading panel-title">
-				Hello
-			</div>
-			<div class="panel-body">
-				Something here
-			</div>
-		</div>
-	</div>
 
-	<div class="row links">
-	
-		<!-- Game Design -->
-		<div class="col-lg-4">
-			<div class="row header">
-				<div class="col-md-12">
-					<h1><a href="https://cs4730.cs.virginia.edu/">Game Design</a></h1>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<h3><a href="ms5">Milestone 5</a></h3>
-				</div>
-			</div>
-		</div>
-		
-		<!-- Capstone -->
-		<div class="col-lg-4">
-			<div class="row header">
-				<div class="col-md-12">
-					<h1><a href="https://github.com/aaronbloomfield/slp">Capstone</a></h1>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<h3><a href="https://github.com/uva-slp/shelter">Shelter GitHub</a></h3>
-					<h3><a href="http://aaronbloomfield.github.io/slp/README.html">Notes</a></h3>
-					<h3><a href="http://pegasus.cs.virginia.edu/shelter/">Shelter</a></h3>	
-					<h3><a href="https://circleci.com/gh/uva-slp/shelter/tree/master">Circle CI</a></h3>
-				</div>
+		<div class="col-sm-5">
+			<div class="table-responsive">
+				<table class="table table-hover table-bordered">
+					<thead>
+						<tr class="active">
+							<th><h1>Course</h1></th>
+						</tr>
+					</thead>
+					<tbody ng-repeat="course in courseList" ng-click="changeCourseIndex($index)">
+						<tr>
+							<td><h3>{{course.title}}</h3></td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
-		
-		<!-- OS -->
-		<div class="col-lg-4">
-			<div class="row header">
-				<div class="col-md-12">
-					<h1><a href="https://collab.itc.virginia.edu/portal/site/916d864b-c206-4484-976d-1df1a5b90182">OS</a></h1>
+
+		<div class="col-sm-7">
+			<div class="panel panel-default">
+				<div class="panel-heading panel-title">
+					<a href="{{courseList[courseIndex].url}}"><h1>{{courseList[courseIndex].title}}</h1></a>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<h3><a href="http://www.cs.virginia.edu/tychonievich/3330/F2014/schedule.html">Schedule</a></h3>
-					<h3><a href="http://www.cs.virginia.edu/tychonievich/3330/F2014/labs.html">Labs and Homework</a></h3>
-					<h3><a href="http://www.cs.virginia.edu/tychonievich/3330/F2014/notes.php">Notes</a></h3>
-					<h3><a href="comp-arch.pdf">Textbook</a></h3>
-				</div>
-			</div>
 			
-		</div>
-		
-		<!-- Other -->
-		<div class="col-lg-12">
-			<div class="row header">
-				<div class="col-lg-12">
-					<h1>Other</h1>
+				<div class="panel-body" ng-repeat="link in courseList[courseIndex].links">
+					<a href="{{link.url}}"><h3>{{link.text}}</h3></a>
 				</div>
 			</div>
-			<div class="col-sm-4">
-				<h3><a href="https://sisuva.admin.virginia.edu/psp/epprd/EMPLOYEE/EMPL/h/?tab=PAPP_GUEST">SIS</a></h3>
-				<h3><a href="reaction.html">Reaction test</h3>
-			</div>
-			<div class="col-sm-4">
-				<h3><a href="https://collab.itc.virginia.edu/portal?containerLogin=true">Collab</a></h3>	
-				<h3><a href="http://game.ioxapp.com/color/">Color game</a></h3>
-			</div>
-			<div class="col-sm-4">
-				<h3><a href="https://piazza.com/class/hueh00346m671d">Piazza</a></h3>	
-				<h3><a href="cavAd/cavAd.html">CavAd</a></h3>
-			</div>
 		</div>
+
 	</div>
 
 	<!-- Party in the back! -->
