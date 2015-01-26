@@ -91,6 +91,10 @@ angular.module('mainApp', [])
 													'url': 'https://drive.google.com/drive/#my-drive'
 												},
 												{
+													'text': 'Github',
+													'url': 'https://github.com/karttrak?tab=repositories'
+												},
+												{
 													'text': 'SIS',
 													'url': 'https://sisuva.admin.virginia.edu/psp/epprd/EMPLOYEE/EMPL/h/?tab=PAPP_GUEST'
 												},
