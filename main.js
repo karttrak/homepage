@@ -11,6 +11,10 @@ angular.module('mainApp', [])
 													'url': 'https://cs4730.cs.virginia.edu/lecture/'
 												},
 												{
+													'text': 'Schedule',
+													'url': 'https://cs4730.cs.virginia.edu/schedule.html'
+												},
+												{
 													'text': 'Piazza',
 													'url': 'https://piazza.com/class/i4k89f431742qw'
 												}
@@ -79,6 +83,10 @@ angular.module('mainApp', [])
 													'url': 'https://collab.itc.virginia.edu/portal?containerLogin=true'
 												},
 												{
+													'text': 'Google Drive',
+													'url': 'https://drive.google.com/drive/#my-drive'
+												},
+												{
 													'text': 'SIS',
 													'url': 'https://sisuva.admin.virginia.edu/psp/epprd/EMPLOYEE/EMPL/h/?tab=PAPP_GUEST'
 												},
@@ -99,11 +107,18 @@ angular.module('mainApp', [])
 								}
 							];
 
-		$scope.courseIndex = 1;
+		$scope.selectedCourse = 4;
+		$scope.viewedCourse = $scope.selectedCourse;
 
-		$scope.changeCourseIndex = function(index) {
+		$scope.viewCourse = function(index) {
 
-			$scope.courseIndex = index;
+			$scope.viewedCourse = index;
+		};
+
+		$scope.selectCourse = function(index) {
+
+			$scope.selectedCourse = index;
+			$scope.viewedCourse = index;
 		};
 
 		$scope.pic = 'http://i.imgur.com/FzkHbdU.jpg?1';

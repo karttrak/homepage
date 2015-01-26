@@ -2,10 +2,10 @@ angular.module('mainApp', [])
 	.controller('mainController', function($scope, $timeout) {
 
 		$scope.dateFormat = 'MM/dd/yyyy';
-		$scope.datepicker = new Date('12/16/2014');
+		$scope.datepicker = new Date('5/7/2015');
 
-		$scope.remainingPlusDollars = 62;
-		$scope.remainingSwipes = 27;
+		$scope.remainingPlusDollars = 327;
+		$scope.remainingSwipes = 55;
 
 		$scope.reload = function() {
 

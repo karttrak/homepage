@@ -31,7 +31,7 @@
 							<th><h1>Course</h1></th>
 						</tr>
 					</thead>
-					<tbody ng-repeat="course in courseList" ng-click="changeCourseIndex($index)">
+					<tbody ng-repeat="course in courseList" ng-click="selectCourse($index)" ng-mouseenter="viewCourse($index)" ng-mouseleave="viewCourse(selectedCourse)">
 						<tr>
 							<td><h3>{{course.title}}</h3></td>
 						</tr>
@@ -43,10 +43,10 @@
 		<div class="col-sm-7">
 			<div class="panel panel-default">
 				<div class="panel-heading panel-title">
-					<a href="{{courseList[courseIndex].url}}"><h1>{{courseList[courseIndex].title}}</h1></a>
+					<a href="{{courseList[viewedCourse].url}}"><h1>{{courseList[viewedCourse].title}}</h1></a>
 				</div>
 			
-				<div class="panel-body" ng-repeat="link in courseList[courseIndex].links">
+				<div class="panel-body" ng-repeat="link in courseList[viewedCourse].links">
 					<a href="{{link.url}}"><h3>{{link.text}}</h3></a>
 				</div>
 			</div>
