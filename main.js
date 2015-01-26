@@ -15,6 +15,10 @@ angular.module('mainApp', [])
 													'url': 'https://cs4730.cs.virginia.edu/schedule.html'
 												},
 												{
+													'text': 'Fullerton Textbook',
+													'url': 'fullerton.pdf'
+												},
+												{
 													'text': 'Piazza',
 													'url': 'https://piazza.com/class/i4k89f431742qw'
 												}
