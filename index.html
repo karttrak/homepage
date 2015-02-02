@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="mainApp">
 <head>
-	<title>Capstone</title>
+	<title>Homepage</title>
 	<link href="uva-logo.png" rel="icon">
 
 	<!-- Bootstrap -->
@@ -23,31 +23,20 @@
 
 	<div class="row">
 
-		<div class="col-sm-5">
-			<div class="table-responsive">
-				<table class="table table-hover table-bordered">
-					<thead>
-						<tr class="active">
-							<th><h1>Course</h1></th>
-						</tr>
-					</thead>
-					<tbody ng-repeat="course in courseList" ng-click="selectCourse($index)" ng-mouseenter="viewCourse($index)" ng-mouseleave="viewCourse(selectedCourse)">
-						<tr>
-							<td><h3>{{course.title}}</h3></td>
-						</tr>
-					</tbody>
-				</table>
+		<div class="col-md-4">
+			<div class="btn-group-vertical btn-group-lg" role="group">
+				<button type="button" class="btn btn-default" ng-repeat="course in courseList" ng-click="selectCourse($index)">{{course.title}}</button>
 			</div>
 		</div>
 
-		<div class="col-sm-7">
+		<div class="col-md-8">
 			<div class="panel panel-default">
 				<div class="panel-heading panel-title">
-					<a href="{{courseList[viewedCourse].url}}"><h1>{{courseList[viewedCourse].title}}</h1></a>
+					<h1><a href="{{courseList[viewedCourse].url}}">{{courseList[viewedCourse].title}}</a></h1>
 				</div>
 			
 				<div class="panel-body" ng-repeat="link in courseList[viewedCourse].links">
-					<a href="{{link.url}}"><h3>{{link.text}}</h3></a>
+					<h3><a href="{{link.url}}">{{link.text}}</a></h3>
 				</div>
 			</div>
 		</div>
@@ -55,9 +44,12 @@
 	</div>
 
 	<!-- Party in the back! -->
-	<h3>Enter a url to an image</h3>
-	<p><input type="text" ng-model="pic"></p>
-	<div><img src="{{pic}}" ng-click="switchImage()"></div>
+
+	<div>
+		<h3>Enter a url to an image</h3>
+		<p><input type="text" ng-model="pic"></p>
+		<div><img src="{{pic}}" ng-click="switchImage()"></div>
+	</div>
 
 </div>
 </body>

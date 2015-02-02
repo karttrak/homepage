@@ -7,6 +7,10 @@ angular.module('mainApp', [])
 									'url': 'https://cs4730.cs.virginia.edu/',
 									'links': [
 												{
+													'text': 'Gamer Card',
+													'url': 'https://stardock.cs.virginia.edu/gamercard-cs4730-s15/'
+												},
+												{
 													'text': 'Lectures',
 													'url': 'https://cs4730.cs.virginia.edu/lecture/'
 												},
@@ -115,17 +119,17 @@ angular.module('mainApp', [])
 								}
 							];
 
-		$scope.selectedCourse = 4;
-		$scope.viewedCourse = $scope.selectedCourse;
+		// $scope.selectedCourse = 4;
+		$scope.viewedCourse = 4;
 
-		$scope.viewCourse = function(index) {
+		// $scope.viewCourse = function(index) {
 
-			$scope.viewedCourse = index;
-		};
+		// 	$scope.viewedCourse = index;
+		// };
 
 		$scope.selectCourse = function(index) {
 
-			$scope.selectedCourse = index;
+			// $scope.selectedCourse = index;
 			$scope.viewedCourse = index;
 		};
 
