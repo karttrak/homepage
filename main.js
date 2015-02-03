@@ -83,6 +83,17 @@ angular.module('mainApp', [])
 
 								},
 								{
+									'title': 'STS',
+									'url': '',
+									'links': [
+												{
+													'text': 'Sources',
+													'url': 'sts/sources.html'
+												}
+											]
+
+								},
+								{
 									'title': 'Other',
 									'url': '',
 									'links': [
@@ -120,7 +131,7 @@ angular.module('mainApp', [])
 							];
 
 		// $scope.selectedCourse = 4;
-		$scope.viewedCourse = 4;
+		$scope.viewedCourse = 5;
 
 		// $scope.viewCourse = function(index) {
 
