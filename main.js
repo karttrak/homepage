@@ -124,6 +124,10 @@ angular.module('mainApp', [])
 												{
 													'text': 'CavAd',
 													'url': 'cavAd/cavAd.html'
+												},
+												{
+													'text': 'Prototype',
+													'url': 'Prototype-kat4ma-mac.zip'
 												}
 											]
 
