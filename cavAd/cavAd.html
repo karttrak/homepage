@@ -18,17 +18,19 @@
 	<script src="cavAd.js"></script>
 </head>
 <body data-ng-controller="mainController">
+
 	<div class="container">
 		Remaining Plus Dollars: <input type="number" ng-model="remainingPlusDollars" ng-change="reload()">
 		<br>
 		Remaining Swipes: <input type="number" ng-model="remainingSwipes" ng-change="reload()">
 		<br>
-		<input type="date" ng-model="datepicker" ng-change="reload()"><!-- 
-		<br>
-		Datepicker: {{datepicker | date: dateFormat}} -->
+		Last day of classes: <input type="date" ng-model="datepicker" ng-change="reload()">
 		<br>
 		<h1>{{weeksUntilDate | number: 1}} weeks remaining.</h1>
 		<h1>You must use {{swipesPerWeek | number: 1}} swipes and ${{plusDollarsPerWeek | number: 2}} plus dollars per week.</h1>
 	</div>
+
+	<a href="https://csg-web1.eservices.virginia.edu/student/welcome.php">Check you balance</a>
+
 </body>
 </html>

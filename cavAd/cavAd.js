@@ -4,8 +4,8 @@ angular.module('mainApp', [])
 		$scope.dateFormat = 'MM/dd/yyyy';
 		$scope.datepicker = new Date('5/7/2015');
 
-		$scope.remainingPlusDollars = 327;
-		$scope.remainingSwipes = 55;
+		$scope.remainingPlusDollars = 267;
+		$scope.remainingSwipes = 39;
 
 		$scope.reload = function() {
 
@@ -18,3 +18,5 @@ angular.module('mainApp', [])
 		$scope.reload();
 
 	});
+
+// Last update: 3.5 swipesPerWeek and $23.78 plusDollarsPerWeek
