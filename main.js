@@ -3,33 +3,6 @@ angular.module('mainApp', [])
 
 		$scope.courseList = [
 								{
-									'title': 'Game Design',
-									'url': 'https://cs4730.cs.virginia.edu/',
-									'links': [
-												{
-													'text': 'Gamer Card',
-													'url': 'https://stardock.cs.virginia.edu/gamercard-cs4730-s15/'
-												},
-												{
-													'text': 'Lectures',
-													'url': 'https://cs4730.cs.virginia.edu/lecture/'
-												},
-												{
-													'text': 'Schedule',
-													'url': 'https://cs4730.cs.virginia.edu/schedule.html'
-												},
-												{
-													'text': 'Fullerton Textbook',
-													'url': 'fullerton.pdf'
-												},
-												{
-													'text': 'Piazza',
-													'url': 'https://piazza.com/class/i4k89f431742qw'
-												}
-											]
-
-								},
-								{
 									'title': 'Capstone',
 									'url': 'https://github.com/aaronbloomfield/slp',
 									'links': [
@@ -57,6 +30,33 @@ angular.module('mainApp', [])
 
 								},
 								{
+									'title': 'Game Design',
+									'url': 'https://cs4730.cs.virginia.edu/',
+									'links': [
+												{
+													'text': 'Gamer Card',
+													'url': 'https://stardock.cs.virginia.edu/gamercard-cs4730-s15/'
+												},
+												{
+													'text': 'Lectures',
+													'url': 'https://cs4730.cs.virginia.edu/lecture/'
+												},
+												{
+													'text': 'Schedule',
+													'url': 'https://cs4730.cs.virginia.edu/schedule.html'
+												},
+												{
+													'text': 'Fullerton Textbook',
+													'url': 'fullerton.pdf'
+												},
+												{
+													'text': 'Piazza',
+													'url': 'https://piazza.com/class/i4k89f431742qw'
+												}
+											]
+
+								},
+								{
 									'title': 'OS',
 									'url': 'https://collab.itc.virginia.edu/portal/site/916d864b-c206-4484-976d-1df1a5b90182',
 									'links': [
@@ -75,6 +75,10 @@ angular.module('mainApp', [])
 									'title': '3240',
 									'url': 'https://collab.itc.virginia.edu/portal/site/6b272103-d1dd-481e-ac2f-1bd3057072f9',
 									'links': [
+												{
+													'text': 'Textbook',
+													'url': 'williamstext.pdf'
+												},
 												{
 													'text': 'Piazza',
 													'url': 'https://piazza.com/class/i4vkwnudwmp66n'
