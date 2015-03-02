@@ -4,7 +4,7 @@ angular.module('mainApp', [])
 		$scope.courseList = [
 								{
 									'title': 'Capstone',
-									'url': 'https://github.com/aaronbloomfield/slp',
+									'url': 'https://collab.itc.virginia.edu/portal/site/54bcbf62-81cb-45bc-bf8c-c7d46467bba5',
 									'links': [
 												{
 													'text': 'Shelter GitHub',
