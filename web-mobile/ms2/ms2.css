@@ -1,0 +1,78 @@
+html {
+	background-image: url("http://www.walnet.org/help/bgtextures/backgroundtile.gif");
+}
+body {
+	font-family: Georgia;
+}
+h2 {
+	text-align: center;
+}
+img {
+	width: 600px;
+	height: auto;
+	display: block;
+	margin: 10px auto 0px auto;
+}
+iframe {
+	margin: 20px 0 20px 0;
+	width: 853px;
+	height: 480px;
+	border: none;
+}
+.container {
+	width: 1000px;
+	margin: auto;
+	padding: 20px 0px 20px 0px;
+	box-shadow: 0px 0px 20px gray;
+	border-radius: 5px;
+	background-color: #eee;
+}
+.content {
+	margin: 0px 50px 0px 50px;
+}
+.header {
+	display: block;
+	margin: 20px auto 30px auto;
+}
+.name {
+	float: left;
+	font: bold 200% Tahoma, Verdana, Segoe, sans-serif;
+}
+.email {
+	float: right;
+	font: italic 200% Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua";
+}
+/* 
+	This group class fixes the weird alignment issues with floating objects.
+	Code was taken from http://css-tricks.com/snippets/css/clear-fix/ 
+*/
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.email a {
+	color: black;
+}
+.email a:hover {
+	color: #18d;
+}
+.links a {
+	margin-right: 50px;
+}
+.media {
+	text-align: center;
+}
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+.centerText {
+	text-align: center;
+}
+.pull-left {
+	float: left;
+}
+.pull-right {
+	float: right;
+}

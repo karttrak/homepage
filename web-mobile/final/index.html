@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html data-ng-app="mainApp">
+<head>
+	<title>Course Tracker</title>
+	<meta charset="UTF-8">
+	<link rel="icon" href="http://grfx.cstv.com/graphics/school-logos/va-lg.png">
+
+	<!-- Bootstrap -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom -->
+	<link rel="stylesheet" type="text/css" href="final.css">
+
+    <!-- AngularJS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+	<!-- Custom -->
+	<script src="final.js"></script>
+</head>
+<body data-ng-controller="mainController">
+	<div class="container">
+
+        <div class="login" data-ng-if="!loggedIn">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <h1>Log In</h1>
+                    <div class="row">
+                        <div class="col-xs-6"><strong class="pull-right">Username</strong></div>
+                        <div class="col-xs-6"><input type="text" class="pull-left" maxlength="20" data-ng-model="username"></div>
+                    </div>
+                    <!--<div class="row">-->
+                        <!--<div class="col-xs-6"><strong class="pull-right">Password</strong></div>-->
+                        <!--<div class="col-xs-6"><input type="password" class="pull-left" maxlength="20" data-ng-model="password"></div>-->
+                    <!--</div>-->
+                    <button class="btn btn-primary" data-ng-click="login(username, password)">Log in</button>
+                </div>
+                <!--<div class="col-md-6">-->
+                    <!--<h1>New User</h1>-->
+                    <!--<div class="row">-->
+                        <!--<div class="col-xs-6"><strong class="pull-right">Username</strong></div>-->
+                        <!--<div class="col-xs-6"><input type="text" class="pull-left" maxlength="20" data-ng-model="newUser"></div>-->
+                    <!--</div>-->
+                    <!--<div class="row">-->
+                        <!--<div class="col-xs-6"><strong class="pull-right">Password</strong></div>-->
+                        <!--<div class="col-xs-6"><input type="password" class="pull-left" maxlength="20" data-ng-model="newPass"></div>-->
+                    <!--</div>-->
+                    <!--<div class="row">-->
+                        <!--<div class="col-xs-6"><strong class="pull-right">Confirm Password</strong></div>-->
+                        <!--<div class="col-xs-6"><input type="password" class="pull-left" maxlength="20" data-ng-model="confirmPass"></div>-->
+                    <!--</div>-->
+                    <!--<button class="btn btn-primary" data-ng-click="createUser(newUser, newPass, confirmPass)">Create Account</button>-->
+                    <!--<div>{{result}}</div>-->
+                <!--</div>-->
+            </div>
+        </div>
+
+		<div class="content" data-ng-if="loggedIn">
+			<a href="..">Go to the home page</a>
+            <div class="pull-right">
+                <button class="btn btn-default" data-ng-click="logout()">Log out</button>
+            </div>
+            <br/>
+            <a href="http://html5.validator.nu/?doc=http%3A%2F%2Fplato.cs.virginia.edu%2F~kat4ma%2Ffinal%2F" target="_blank">HTML5 Validation</a>
+
+			<main>
+                <h1>Hello, {{username}}</h1>
+                <div class="pull-right">
+
+                </div>
+				<h2>Summary</h2>
+				<p>
+                    This web application tracks the classes people are taking.
+                    Edits to the class list only affect the classes for that particular user.
+                    One user cannot have multiple classes with the same name.
+				</p>
+				<div>
+                    <div class="row edit-panel">
+                        <div class="col-sm-4">
+                            <div class="pull-left">
+                                <button class="btn btn-primary" data-ng-if="!classForm.show" data-ng-click="classForm.show = true">Add a class</button>
+                                <div class="form" data-ng-show="classForm.show">
+                                    <input type="text" placeholder="Class title" data-ng-model="classForm.classTitle">
+                                    <button class="btn btn-xs btn-danger" data-ng-click="cancelClassForm()">Cancel</button>
+                                    <button class="btn btn-xs btn-default" data-ng-click="submitClassForm()">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 update-form">
+                            <button class="btn btn-warning" data-ng-if="!updateForm.show" data-ng-click="updateForm.show = true">Update a class</button>
+                            <div class="form" data-ng-show="updateForm.show">
+                                <input type="text" placeholder="Current class title" data-ng-model="updateForm.oldTitle">
+                                <br/>
+                                <input type="text" placeholder="New class title" data-ng-model="updateForm.newTitle">
+                                <br/>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <button class="btn btn-xs btn-danger pull-right" data-ng-click="cancelUpdateForm()">Cancel</button>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <button class="btn btn-xs btn-default pull-left" data-ng-click="updateClass()">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="pull-right">
+                                <button class="btn btn-danger" data-ng-if="!deleteForm.show" data-ng-click="deleteForm.show = true">Delete a class</button>
+                                <div class="form" data-ng-show="deleteForm.show">
+                                    <input type="text" placeholder="Class title" data-ng-model="deleteForm.classTitle">
+                                    <button class="btn btn-xs btn-danger" data-ng-click="cancelDeleteForm()">Cancel</button>
+                                    <button class="btn btn-xs btn-default" data-ng-click="deleteClass(deleteForm.classTitle)">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			</main>
+
+            <div id="database"></div>
+
+            <footer>
+				<a href="http://tenacious-tiger-726.appspot.com/" class="btn btn-default">Sign the guestbook!</a>
+			</footer>
+		</div>
+	</div>
+    <div class="citation">
+        <span>This page made with Bootstrap</span>
+        <br/>
+        <a href="http://www.dreamstime.com/stock-photo-pencil-sketch-frames-image14429250" target="_blank">See where I got the background</a>
+    </div>
+</body>
+</html>

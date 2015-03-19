@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Page of Awesome.</title>
+	<style type="text/css">
+
+		h3 {
+		  font-family: Verdana,sans-serif;
+		  background-color: green;
+		}
+
+		img {
+			width: 200px;
+			height: 150px;
+			transition: transform 1s ease-in-out;
+		}
+
+		ul.gallery li{
+			float: left;
+			margin: 5px;
+			padding: 10px;
+			border: solid purple 2px;
+			list-style: none;
+		}
+
+		ul.gallery li a:hover img {
+			/*transform-origin: top left;*/
+			box-shadow: -4px -4px 4px purple;
+			transform: scale(1.5) rotate(5deg);
+			-webkit-transform: scale(1.5) rotate(180deg);
+		}
+
+		.neatText {
+		  background-color: yellow;
+		  font-weight: 10;
+		}
+
+		#specificText {
+		  background-color: red;
+		}
+
+	</style>
+</head>
+<body>
+	<h3>More about my page.</h3>
+
+	<div class="neatText">This is some more text that I want to make look really neat.</div>
+
+	<div id="specificText" class="neatText">I only want this to look Red.</div>
+
+	<div class="neatText">More neat text.</div>
+
+	<button id="myButton" type="button" class="neatText">Click Me!</button>
+
+	<meter max="10" value="9"></meter>
+
+	<ul class="gallery">
+	    <li><a href="#"><img src="http://2.bp.blogspot.com/-IX2s8_Hld80/URvzo7T6-CI/AAAAAAAC0SU/K3PA6sdHc4g/s1600/baby+sloth+in+bucket.jpg"></a></li>
+
+	    <li><a href="#"><img src="http://www.bizarbin.com/wp-content/uploads/2013/03/baby-sloth.jpg"></a></li>
+
+	    <li><a href="#"><img src="http://i.imgur.com/FzkHbdU.jpg?1"></a></li>
+
+	    <li><a href="#"><img src="http://costa-rica-guide.com/photos/slideshow/two-toed-sloth-choloepus-hoffmanni-1194.JPG"></a></li>
+	</ul>
+
+
+</body>
+</html>

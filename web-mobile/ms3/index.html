@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>I can Track It!</title>
+	<meta charset="UTF-8">
+
+	<!-- Bootstrap -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- JQuery -->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="/resources/demos/style.css">
+
+	<!-- Custom -->
+	<link rel="stylesheet" type="text/css" href="ms3.css">
+
+	<!-- JQuery -->
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+
+	<!-- Custom -->
+	<script src="ms3.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="content">
+			<a href="..">Go to the home page</a>
+			<header class="row header">
+				<div class="col-md-6 name"><span class="pull-left">Kyle Thornburgh</span></div>
+				<div class="col-md-6 email"><a class="pull-right" href="mailto:kat4ma@virginia.edu">kat4ma@virginia.edu</a></div>
+			</header>
+			<main>
+				<h3>Summary</h3>
+				<p>
+					This is a web application that tracks assignments for classes. You can add as many classes as you want, and each class can have its own list of assignments. Assignments are organized by due date and will become red as their due dates approach.
+				</p>
+				<div>
+					<h3>Plan your classes</h3>
+					<p><button class="btn btn-primary" id="add-class">Add class</button></p>
+					<div id="class-list" class="inline-block">
+						<div class="class">
+							<h3 class="center-text">Class Title</h3>
+							<p class="center-text"><button class="btn btn-primary" id="add-assignment">Add assignment</button></p>
+							<div id="assignments-list"></div>
+							<div class="center-text">
+								<div id="assignment-form">
+									<div class="form">
+										<h3 class="center-text">Assignment</h3>
+										<p><input type="text" id="assignment" placeholder="Assignment"></p>
+										<p><input type="text" id="datepicker" placeholder="Due date"></p>
+										<div>
+											<button class="btn btn-danger pull-left" id="assignment-cancel">Cancel</button>
+											<button class="btn btn-default pull-right" id="assignment-submit">Submit</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form" id="class-form">
+						<h3 class="center-text">Add Class</h3>
+						<p><input type="text" id="class-title" placeholder="Class title"></p>
+						<div>
+							<button class="btn btn-danger pull-left" id="class-cancel">Cancel</button>
+							<button class="btn btn-default pull-right" id="class-submit">Submit</button>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html data-ng-app="mainApp">
+<head>
+	<title>I can Track It!</title>
+	<meta charset="UTF-8">
+	<link rel="icon" href="http://grfx.cstv.com/graphics/school-logos/va-lg.png">
+
+	<!-- Bootstrap -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom -->
+	<link rel="stylesheet" type="text/css" href="ms4.css">
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+
+	<!-- AngularJS -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+
+	<!-- JQuery -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+	<!-- Custom -->
+	<script src="ms4.js"></script>
+</head>
+<body data-ng-controller="mainController">
+	<div class="container">
+		<div class="login" data-ng-if="!loggedIn">
+			<div class="row">
+				<div class="col-md-6">
+					<h1>Log In</h1>
+					<div class="row">
+						<div class="col-xs-6"><strong class="pull-right">Username</strong></div>
+						<div class="col-xs-6"><input type="text" class="pull-left" maxlength="20" data-ng-model="username"></div>
+					</div>
+					<div class="row">
+						<div class="col-xs-6"><strong class="pull-right">Password</strong></div>
+						<div class="col-xs-6"><input type="password" class="pull-left" maxlength="20" data-ng-model="password"></div>
+					</div>
+					<button class="btn btn-primary" data-ng-click="login(username, password)">Log in</button>
+				</div>
+				<div class="col-md-6">
+					<h1>New User</h1>
+					<div class="row">
+						<div class="col-xs-6"><strong class="pull-right">Username</strong></div>
+						<div class="col-xs-6"><input type="text" class="pull-left" maxlength="20" data-ng-model="newUser"></div>
+					</div>
+					<div class="row">
+						<div class="col-xs-6"><strong class="pull-right">Password</strong></div>
+						<div class="col-xs-6"><input type="password" class="pull-left" maxlength="20" data-ng-model="newPass"></div>
+					</div>
+					<div class="row">
+						<div class="col-xs-6"><strong class="pull-right">Confirm Password</strong></div>
+						<div class="col-xs-6"><input type="password" class="pull-left" maxlength="20" data-ng-model="confirmPass"></div>
+					</div>
+					<button class="btn btn-primary" data-ng-click="createUser(newUser, newPass, confirmPass)">Create Account</button>
+					<div>{{result}}</div>
+				</div>
+			</div>
+		</div>
+		<div class="content" data-ng-if="loggedIn">
+			<a href="..">Go to the home page</a>
+			<div class="pull-right"><a href="http://html5.validator.nu/?doc=http%3A%2F%2Fplato.cs.virginia.edu%2F~kat4ma%2Fms5%2F" target="_blank">
+				HTML5 Validation</a>
+			</div>
+			<main>
+				<h2>Summary</h2>
+				<p>
+					This web application tracks assignments for classes. You can add as many classes as you want, and each class may track its own list of assignments.
+				</p>
+				<div>
+					<h2>Plan your classes</h2>
+					<div>
+						<button class="btn btn-primary" data-ng-click="classForm.show = true">Add a class</button>
+						<button class="btn btn-danger" data-ng-click="deleteMode = true" data-ng-hide="deleteMode || classList.length == 0">Delete a class</button>
+						<button class="btn btn-success" data-ng-click="deleteMode = false" data-ng-show="deleteMode">Save classes</button>
+					</div>
+					<div class="class" data-ng-class="{deleteClass: deleteMode}" data-ng-repeat="class in classList">
+						<h3><button class="btn btn-sm btn-danger" data-ng-if="deleteMode" data-ng-click="deleteClass(class, $index)">Delete</button> {{class.classTitle}}</h3>
+						<div><button class="btn btn-primary" data-ng-click="class.assignmentForm.show = true">Add Assignment</button></div>
+						<div data-ng-repeat="assignment in class.assignmentList" class="assignment" data-ng-click="assignment.edit = true">
+							<div data-ng-show="!assignment.edit">{{assignment.name}} - {{assignment.dueDate}}</div>
+							<div data-ng-show="assignment.edit">
+								<div>
+									<input type="text" size="10" data-ng-model="assignment.name">
+									<input type="date" data-ng-model="assignment.dueDate">
+								</div>
+								<div class="row assignment-buttons">
+									<div class="col-sm-6">
+										<button class="btn btn-danger" data-ng-click="deleteAssignment(class, $index)">Delete</button>
+									</div>
+									<div class="col-sm-6">
+										<button class="btn btn-success pull-right" data-ng-click="updateAssignment(class, $index, assignment.name, assignment.dueDate)">Update</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="form" data-ng-show="class.assignmentForm.show">
+							<h3>Assignment</h3>
+							<p><input type="text" placeholder="Assignment" data-ng-model="class.assignmentForm.assignmentName" size="20"></p>
+							<p><input type="date" data-ng-model="class.assignmentForm.dueDate"></p>
+							<div>
+								<button class="btn btn-danger pull-left" data-ng-click="cancelAssignmentForm(class)">Cancel</button>
+								<button class="btn btn-default pull-right" data-ng-click="submitAssignmentForm(class)">Submit</button>
+							</div>
+						</div>
+
+					</div>
+					<div class="form" data-ng-show="classForm.show">
+						<h3>Add Class</h3>
+						<p><input type="text" placeholder="Class title" data-ng-model="classForm.classTitle"></p>
+						<div>
+							<button class="btn btn-danger pull-left" data-ng-click="cancelClassForm()">Cancel</button>
+							<button class="btn btn-default pull-right" data-ng-click="submitClassForm()">Submit</button>
+						</div>
+					</div>
+				</div>
+			</main>
+			<footer>
+				<a href="http://tenacious-tiger-726.appspot.com/" class="btn btn-default">Sign the guestbook!</a>
+			</footer>
+		</div>
+	</div>
+</body>
+</html>

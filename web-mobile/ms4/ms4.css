@@ -1,0 +1,108 @@
+body {
+	background-image: url("http://thumbs.dreamstime.com/x/pencil-sketch-frames-14429250.jpg");
+	font: 160% Georgia;
+}
+:focus {
+	outline: none !important;
+}
+input {
+	height: 24px;
+}
+h3 {
+	margin: 5px;
+}
+.container {
+	margin-top: 10px;
+	padding: 20px 0px 20px 0px;
+	box-shadow: 0px 0px 20px gray;
+	border-radius: 5px;
+	background-color: #eee;
+	min-height: 500px;
+}
+.login {
+	border-radius: 5px;
+	text-align: center;
+	margin-top: 10%;
+}
+.login input {
+	margin-bottom: 5px;
+}
+.content {
+	margin: 0px 50px 0px 50px;
+}
+.header {
+	margin: 20px -15px 30px -15px;
+}
+.name {
+	float: left;
+	font: bold 200% Tahoma, Verdana, Segoe, sans-serif;
+}
+.email {
+	float: right;
+	font: italic 200% Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua";
+}
+.email a {
+	color: black;
+}
+.email a:hover {
+	color: #18d;
+}
+.form {
+	background-color: #eef;
+	box-shadow: 5px 5px 5px gray;
+	border: 1px solid #666;
+	border-radius: 5px;
+	display: inline-block;
+	padding: 8px;
+	text-align: center;
+	margin-top: 5px;
+}
+
+.class {
+	background-color: #ffe;
+	box-shadow: 2px 2px 5px gray;
+	border: 1px solid #666;
+	border-radius: 5px;
+	display: inline-block;
+	padding: 5px;
+	text-align: center;
+	vertical-align: top;
+	margin: 5px 5px 0px 0px;
+}
+.deleteClass {
+	background-color: #aaa;
+}
+.deleteClass:hover {
+	background-color: #faa;
+}
+.assignment {
+	background-color: #fdd;
+	border: 1px solid #a66;
+	border-radius: 5px;
+	padding: 5px;
+	margin-top: 5px;
+	display: block;
+}
+.assignment:hover {
+	background-color: #fbb;
+}
+.assignment-buttons {
+	text-align: left;
+}
+.assignment-buttons .btn {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-top: 3px;
+}
+.center-text {
+	text-align: center;
+}
+.inline-block {
+	display: inline-block;
+}
+.red {
+	background-color: magenta;
+}
+.blue {
+	background-color: cyan;
+}
