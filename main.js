@@ -80,6 +80,10 @@ angular.module('mainApp', [])
 													'url': 'williamstext.pdf'
 												},
 												{
+													'text': 'Project Github',
+													'url': 'https://github.com/karttrak/3240-team10'
+												},
+												{
 													'text': 'Piazza',
 													'url': 'https://piazza.com/class/i4vkwnudwmp66n'
 												}
