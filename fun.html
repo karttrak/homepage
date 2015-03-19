@@ -1,0 +1,158 @@
+<html ng-app="app">
+<head>
+	<title>Practice</title>
+
+	<!-- Bootstrap -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Angular -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+	<script type="text/javascript">
+		angular.module('app', [])
+			.controller('ctrl', function($scope, $timeout) {
+				$scope.x = 0;
+				$scope.y = 0;
+
+				var targetSize = 100;
+
+				var xDist, yDist, targetCenter;
+				$scope.totalDist;
+
+				$scope.testIsDone = false;
+				$scope.testInProgress = false;
+
+				$scope.totalClicks = 0;
+				$scope.goal = 10;
+				$scope.reactionTime;
+
+				var w = window,
+					d = document,
+					e = d.documentElement,
+					g = d.getElementsByTagName('body')[0];
+
+				var maxX, maxY, count, startTime, endTime;
+
+				$scope.startTest = function() {
+
+					initialize();
+				};
+
+				$scope.move = function() {
+
+					count++;
+
+					count < $scope.goal ? moveTarget() : endTest();
+				};
+
+				$scope.click = function() {
+
+					if ($scope.testInProgress) {
+
+						$scope.totalClicks++;
+					}
+				};
+
+				var initialize = function() {
+
+					maxX = w.innerWidth || e.clientWidth || g.clientWidth;
+					maxY = w.innerHeight|| e.clientHeight|| g.clientHeight;
+
+					moveTarget();
+
+					count = 0;
+					$scope.totalClicks = 0;
+
+					$scope.testInProgress = true;
+					$scope.testIsDone = false;
+
+					startTime = new Date();
+				};
+
+				var endTest = function() {
+
+					endTime = new Date();
+					totalTime = (endTime - startTime);
+
+					$scope.reactionTime = Math.floor(totalTime / $scope.goal);
+					$scope.testIsDone = true;
+					$scope.testInProgress = false;
+				};
+
+				var moveTarget = function() {
+
+					getRandX();
+					getRandY();
+				};
+
+				var getRandX = function() {
+
+					do {
+						$scope.x = Math.floor(maxX * Math.random() - targetSize - 15);
+					} while ($scope.x < 0);
+					console.log('X:' + $scope.x + ' out of ' + maxX);
+				}
+
+				var getRandY = function() {
+
+					do {
+						$scope.y = Math.floor(maxY * Math.random() - targetSize);
+					} while ($scope.y < 0);
+					console.log('Y: ' + $scope.y + ' out of ' + maxY);
+				}
+
+
+				// setInterval(function() {
+				// 	$scope.i++;
+				// 	$scope.j+=2;
+				// 	$scope.intervalFunction();
+				// }, 100);
+
+				// $scope.intervalFunction = function () {
+				// 	$scope.move();
+					
+			 //        $timeout(function() {
+				//       	$scope.intervalFunction();
+				// 	}, 1000)
+				// };
+
+				// $scope.intervalFunction();
+			});
+	</script>
+
+	<style type="text/css">
+		body {
+			text-align: center;
+		}
+		.target {
+			background-color: black;
+			width: 100px;
+			height: 100px;
+		}
+		button {
+			border-radius: 15px !important;
+			margin-top: 100px;
+		}
+		.container {
+			height: 100%;
+			width: 100%;
+		}
+	</style>
+</head>
+<body ng-controller="ctrl">
+	<div ng-click="click()" class="container" style="background-color: cyan;">
+		<div ng-if="testIsDone && !testInProgress">
+			<h1>Your reaction time is {{reactionTime}} ms</h1>
+			<h1>Missed clicks: {{totalClicks - goal}}</h1>
+		</div>
+		<!-- <h1>Missed clicks: {{totalClicks}}</h1> -->
+		<div ng-if="!testIsDone && !testInProgress">
+			<strong>
+				Rules: You must click the target {{goal}} times as fast as you can. 
+				Every missed click counts against your score.
+			</strong>
+		</div>
+		<button class="btn btn-primary" ng-click="startTest();" ng-if="!testInProgress"><h1>Begin test</h1></button>
+		<div class="target" style="margin: {{y}}px 0 0 {{x}}px;" ng-click="move()" ng-if="testInProgress"></div>
+	</div>
+</body>
+</html>

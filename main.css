@@ -1,0 +1,103 @@
+body {
+	font-family: Georgia;
+	text-align: center;
+	/*background: url("http://my-smashing.smashingapps.netdna-cdn.com/wp-content/uploads/2013/04/blurbackgrounds9.jpg") no-repeat center;*/
+	/*background-size: cover;*/
+	background-color: #f8f8ff;
+}
+h1 {
+	text-align: center;
+	font-weight: bold;
+	margin: 0px;
+}
+h1 a {
+	color: black;
+}
+h1 a:hover {
+	color: black;
+}
+h3 {
+	font-weight: bold;
+	margin: 0px;
+}
+button {
+	background-color: #9af;
+	border-radius: 5px;
+	border: 0;
+	padding: 5px;
+}
+button:focus {
+	outline: 0;
+}
+button:hover {
+	background-color: #abf;
+}
+button:active {
+	background-color: #89d;
+}
+a {
+	color: #18d;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:active {
+	text-decoration: underline;
+}
+a:focus {
+	text-decoration: none;
+}
+img {
+  max-width: 100%;
+  box-shadow: 0px 0px 10px lightgray;
+  margin-bottom: 20px;
+  border-radius: 7px;
+}
+img:hover {
+	box-shadow: 0px 0px 10px gray;
+}
+th {
+	text-align: center;
+	cursor: default;
+}
+tbody tr {
+	cursor: pointer;
+}
+tbody tr:hover {
+	background-color: #f5f5f5;
+}
+.container {
+	max-width: 600px;
+	margin-top: 10px;
+	padding: 20px 0px 20px 0px;
+	box-shadow: 0px 0px 20px gray;
+	border-radius: 5px;
+	background-color: #f5f5f5;
+}
+.active {
+	background-color: #eee !important;
+}
+/*tbody tr:active {
+	background-color: #e7e7e7;
+}*/
+.header {
+	background-color: lightgray;
+}
+.panel {
+	margin-right: 15px;
+}
+.panel-heading {
+	background-color: #D3D3D3 !important;
+}
+.panel-body {
+	background-color: #DDE;
+}
+.links {
+	background-color: #dde;
+	border-radius: 0px 0px 15px 15px;
+}
+.btn-group-vertical {
+	width: 100%;
+	margin-left: 15px;
+}
