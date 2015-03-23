@@ -84,6 +84,10 @@ angular.module('mainApp', [])
 													'url': 'https://github.com/karttrak/3240-team10'
 												},
 												{
+													'text': 'Pivotal Tracker',
+													'url': 'https://www.pivotaltracker.com/n/projects/1301738'
+												},
+												{
 													'text': 'Piazza',
 													'url': 'https://piazza.com/class/i4vkwnudwmp66n'
 												}
