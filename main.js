@@ -30,33 +30,6 @@ angular.module('mainApp', [])
 
 								},
 								{
-									'title': 'Game Design',
-									'url': 'https://cs4730.cs.virginia.edu/',
-									'links': [
-												{
-													'text': 'Gamer Card',
-													'url': 'https://stardock.cs.virginia.edu/gamercard-cs4730-s15/'
-												},
-												{
-													'text': 'Lectures',
-													'url': 'https://cs4730.cs.virginia.edu/lecture/'
-												},
-												{
-													'text': 'Schedule',
-													'url': 'https://cs4730.cs.virginia.edu/schedule.html'
-												},
-												{
-													'text': 'Fullerton Textbook',
-													'url': 'fullerton.pdf'
-												},
-												{
-													'text': 'Piazza',
-													'url': 'https://piazza.com/class/i4k89f431742qw'
-												}
-											]
-
-								},
-								{
 									'title': 'OS',
 									'url': 'https://collab.itc.virginia.edu/portal/site/916d864b-c206-4484-976d-1df1a5b90182',
 									'links': [
@@ -136,27 +109,16 @@ angular.module('mainApp', [])
 												{
 													'text': 'CavAd',
 													'url': 'cavAd/cavAd.html'
-												},
-												{
-													'text': 'Prototype',
-													'url': 'Prototype-kat4ma-mac.zip'
 												}
 											]
 
 								}
 							];
 
-		// $scope.selectedCourse = 4;
-		$scope.viewedCourse = 5;
-
-		// $scope.viewCourse = function(index) {
-
-		// 	$scope.viewedCourse = index;
-		// };
+		$scope.viewedCourse = $scope.courseList.length-1;
 
 		$scope.selectCourse = function(index) {
 
-			// $scope.selectedCourse = index;
 			$scope.viewedCourse = index;
 		};
 
